@@ -3,3 +3,6 @@ def sum(a: int, b: int) -> int:
 
 def substract(a: int, b: int) -> int:
     return a - b
+
+def multi(a,b):
+    return a*b
