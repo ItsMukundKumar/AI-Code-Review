@@ -11,7 +11,12 @@ def getDiff():
 
 llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite")
 
-output = llm.invoke('Hello!')
-
-
-print(output.content)
+def main():
+    diff = getDiff()
+    
+    prompt = f"Review the following code changes and provide feedback:\n\n{diff}"
+    response = llm.invoke(prompt)
+    print("Code Review Feedback: ")
+    print(response.text)
+    
+main()
