@@ -20,4 +20,5 @@ jobs:
             - name: Run Review Script
               env:
                   GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+                  MAIL_APP_PASSWORD: ${{ secrets.MAIL_APP_PASSWORD }}
               run: python ./scripts/review.py
