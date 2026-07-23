@@ -16,6 +16,6 @@ jobs:
               with:
                   python-version: "3.13"
             - name: Install Dependencies
-              run: python pip install -r requirements.txt
+              run: pip install -r requirements.txt
             - name: Run Review Script
               run: python ./scripts/review.py
