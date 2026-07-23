@@ -14,7 +14,7 @@ llm = ChatGoogleGenerativeAI(model="gemini-3.1-flash-lite")
 def main():
     diff = getDiff()
     
-    prompt = f"Review the following code changes and provide feedback:\n\n{diff}\n\nMandatory: Provie output in HTML formate that can use to sent in mail"
+    prompt = f"Review the following code changes and provide feedback:\n\nMandatory: Provie output in HTML that can use to sent in mail\n\n{diff}"
     response = llm.invoke(prompt)
     print("Code Review Feedback: ")
     print(response.text)
