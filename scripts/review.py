@@ -23,12 +23,11 @@ def send_email(html_content):
     msg.set_content("Please find the codereview feedback below.")
     msg.add_alternative(html_content, subtype="html")
 
-    with smtplib.SMTP_SSL("smtp.gmail.com", 456) as smtp:
+    with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
         smtp.login("shahmukund060@gmail.com", os.getenv("MAIL_APP_PASSWORD"))  # type: ignore
         smtp.send_message(msg)
-        
-    
-    print('Email sent Successfully')
+
+    print("Email sent Successfully")
 
 
 def main():
@@ -38,7 +37,8 @@ def main():
     response = llm.invoke(prompt)
 
     html_content = response.text
-    
+
     send_email(html_content)
+
 
 main()
